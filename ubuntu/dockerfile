@@ -1,0 +1,5 @@
+FROM ubuntu
+COPY p1.cpp p2.cpp ./
+RUN apt-get update && apt-get install gcc gcc-multilib g++ -y
+RUN gcc p1.cpp -o p1 -lstdc++ && gcc p2.cpp -o p2 -lstdc++ 
+CMD ./p2
